@@ -1,10 +1,8 @@
 .PHONY: all
 all:
-	runc spec
 	mkdir rootfs
-	docker export $$(docker create alpine:latest) | tar -C rootfs -xvf -
+	docker export $$(docker create networking-alpine:v0.1) | tar -C rootfs -xvf -
 
 .PHONY: clean
 clean:
 	rm -rf rootfs
-	rm config.json
