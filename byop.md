@@ -2,6 +2,11 @@
 
 # $ whoami
 
+# Why?
+
+* Because sometimes, reinventing the wheel, can teach you a lot about
+how wheels are built.
+
 # What is a Pod?
 
 * A pod is a group of one or more containers, with shared storage/network,
@@ -9,13 +14,18 @@ and a specification for how to run the containers
 
 # What is a container?
 
-* Containers are not a real thing (on Linux)
-* They are an abstract concept to describe the usage of namespaces and cgroups to run
+* Containers are an abstract concept to describe the usage of namespaces and cgroups to run
 isolated processes
 
 # Namespaces
 
+* What you see
+* `man namespaces`
+
 # CGroups
+
+* What you can use
+* `man cgroups`
 
 # What is runc?
 
@@ -42,3 +52,17 @@ $ runc run sh
 
 # Where is my network?
 
+* With our simple config, there is no network
+* We have to set up everything ourself :-)
+
+# Configure basic network
+
+* Create a bridge
+* Create a network namespace
+* Patch container into bridge
+* Tell container about network namespace
+
+# Sources
+
+* https://blog.jessfraz.com/ (General container crazyness)
+* https://blog.selectel.com/managing-containers-runc/ (low-level container networking) 
