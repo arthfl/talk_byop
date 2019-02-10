@@ -1,6 +1,6 @@
 .PHONY: all
 all:
-	runc spec
+	runc spec --rootless
 	mkdir rootfs
 	docker export $$(docker create alpine:latest) | tar -C rootfs -xvf -
 
