@@ -62,6 +62,12 @@ $ runc run sh
 * Patch container into bridge
 * Tell container about network namespace
 
+# A simple pod
+
+* Same network setup
+* Just put two containers in the same network namespace
+* Both see the same interface and can use it alternatingly
+
 # Sources
 
 * https://blog.jessfraz.com/ (General container crazyness)
