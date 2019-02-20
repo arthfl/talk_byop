@@ -68,6 +68,10 @@ $ runc run sh
 * Just put two containers in the same network namespace
 * Both see the same interface and can use it alternatingly
 
+# A pod with a shared "volume"
+
+* Both containers in the pod have the same directory mounted
+
 # Sources
 
 * https://blog.jessfraz.com/ (General container crazyness)
