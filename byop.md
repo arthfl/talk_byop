@@ -74,5 +74,7 @@ $ runc run sh
 
 # Sources
 
+* `man namespaces`
+* `man cgroups`
 * https://blog.jessfraz.com/ (General container crazyness)
 * https://blog.selectel.com/managing-containers-runc/ (low-level container networking) 
