@@ -71,6 +71,7 @@ $ runc run sh
 # A pod with a shared "volume"
 
 * Both containers in the pod have the same directory mounted
+* They are now able to access and write the same files
 
 # Sources
 
