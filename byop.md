@@ -7,15 +7,15 @@
 * Because sometimes, reinventing the wheel, can teach you a lot about
 how wheels are built.
 
-# What is a Pod?
-
-* A pod is a group of one or more containers, with shared storage/network,
-and a specification for how to run the containers
-
 # What is a container?
 
 * Containers are an abstract concept to describe the usage of namespaces and cgroups to run
 isolated processes
+
+# What is a Pod?
+
+* A pod is a group of one or more containers, with shared storage/network,
+and a specification for how to run the containers
 
 # Namespaces
 
