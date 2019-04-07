@@ -5,7 +5,7 @@
 # Why?
 
 * Because sometimes, reinventing the wheel, can teach you a lot about
-how wheels are built.
+how wheels work.
 
 # What is a container?
 
@@ -14,6 +14,7 @@ isolated processes
 
 # What is a Pod?
 
+* The smallest deployable unit of computing in K8S
 * A pod is a group of one or more containers, with shared storage/network,
 and a specification for how to run the containers
 
