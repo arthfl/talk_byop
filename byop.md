@@ -2,21 +2,18 @@
 
 # $ whoami
 
+* Florian Arthofer
+* Cloud Platform Engineer @ Dynatrace
+* `@arthfl` on GitHub, Twitter...etc
+
 # Why?
 
-* Because sometimes, reinventing the wheel, can teach you a lot about
-how wheels work.
+* Understanding things on a very low level, helps you debugging the silly problems
 
 # What is a container?
 
-* Containers are an abstract concept to describe the usage of namespaces and cgroups to run
+* Containers are just an abstract concept to describe the usage of namespaces and cgroups to run
 isolated processes
-
-# What is a Pod?
-
-* The smallest deployable unit of computing in K8S
-* A pod is a group of one or more containers, with shared storage/network,
-and a specification for how to run the containers
 
 # Namespaces
 
@@ -28,10 +25,18 @@ and a specification for how to run the containers
 * What you can use
 * `man cgroups`
 
-# What is runc?
+# What is a Pod?
 
-* CLI tool that implements the OCI standard
-* Used by Docker, Cloud Foundry, Kubernetes...etc
+* The smallest deployable unit of computing in K8S
+* A pod is a group of one or more containers, with shared storage/network,
+and a specification for how to run the containers
+
+# Toolbox
+
+* `runc`: CLI tool that implements the OCI standard
+    * Used by Docker, Cloud Foundry, Kubernetes...etc
+* `iproute2`: default userspace utils for Linux networking
+* (This is not the lowest level to create containers)
 
 # Create a simple OCI container
 
@@ -48,7 +53,7 @@ $ docker export $(docker create alpine:latest) | tar -C rootfs -xvf -
 
 * Run it!
 ```bash
-$ runc run sh
+$ runc run thecontainer
 ```
 
 # Where is my network?
@@ -71,8 +76,16 @@ $ runc run sh
 
 # A pod with a shared "volume"
 
-* Both containers in the pod have the same directory mounted
+* Both containers have `/srv/somevolume`, which is a bind-mount to the hosts `/tmp/somevolume`
 * They are now able to access and write the same files
+
+# Conclusion
+
+* I'm really glad somebody automated all of that already
+
+# Questions?
+
+* ?
 
 # Sources
 
@@ -80,5 +93,7 @@ $ runc run sh
 * `man cgroups`
 * `man capabilities`
 * https://blog.jessfraz.com/ (General container crazyness)
-* https://blog.selectel.com/managing-containers-runc/ (low-level container networking) 
+* https://blog.selectel.com/managing-containers-runc/ (low-level container networking)
 * http://blog.siphos.be/tag/capabilities/ (capabilites overview)
+* https://medium.com/@saschagrunert/demystifying-containers-part-i-kernel-space-2c53d6979504
+(nice low level intro)
